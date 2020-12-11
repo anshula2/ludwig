@@ -40,7 +40,7 @@ def generated_data():
     # within 30 epochs for suitable model definition
 
     # generate data
-    np.random.seed(RANDOM_SEED)
+    #np.random.seed(RANDOM_SEED)
     x = np.array(range(NUMBER_OBSERVATIONS)).reshape(-1, 1)
     y = 2 * x + 1 + np.random.normal(size=x.shape[0]).reshape(-1, 1)
     raw_df = pd.DataFrame(np.concatenate((x, y), axis=1), columns=['x', 'y'])
@@ -60,7 +60,7 @@ def generated_data_for_optimizer():
     # within 30 epochs for suitable model definition
 
     # generate data
-    np.random.seed(RANDOM_SEED)
+    #np.random.seed(RANDOM_SEED)
     x = np.array(range(NUMBER_OBSERVATIONS)).reshape(-1, 1)
     y = 2 * x + 1 + np.random.normal(size=x.shape[0]).reshape(-1, 1)
     raw_df = pd.DataFrame(np.concatenate((x, y), axis=1), columns=['x', 'y'])
@@ -368,8 +368,8 @@ def test_regularization(generated_data, tmp_path):
     regularization_losses = []
     for regularizer in [None, 'l1', 'l2', 'l1_l2']:
         tf.keras.backend.clear_session()
-        np.random.seed(RANDOM_SEED)
-        tf.random.set_seed(RANDOM_SEED)
+        #np.random.seed(RANDOM_SEED)
+        #tf.random.set_seed(RANDOM_SEED)
 
         # setup regularization parameters
         model_definition['output_features'][0][

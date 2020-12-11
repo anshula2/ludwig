@@ -287,7 +287,7 @@ class Trainer:
         :param test_set: The test dataset
         """
         # ====== General setup =======
-        tf.random.set_seed(self.random_seed)
+        #tf.random.set_seed(self.random_seed)
 
         output_features = model.output_features
         digits_per_epochs = len(str(self.epochs))

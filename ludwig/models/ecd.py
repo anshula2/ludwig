@@ -26,7 +26,8 @@ class ECD(tf.keras.Model):
             **kwargs
     ):
         if random_seed is not None:
-            tf.random.set_seed(random_seed)
+            #tf.random.set_seed(random_seed)
+            pass
 
         super().__init__()
 

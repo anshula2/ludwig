@@ -125,8 +125,8 @@ def test_encoder(test_case):
     os.mkdir(IMAGE_DIR)
 
     # reproducible synthetic data set
-    np.random.seed(RANDOM_SEED)
-    tf.random.set_seed(RANDOM_SEED)
+    #np.random.seed(RANDOM_SEED)
+    #tf.random.set_seed(RANDOM_SEED)
 
     # create synthetic data for the test
     features = [
@@ -146,8 +146,8 @@ def test_encoder(test_case):
     training_set, _, _, training_set_metadata = preprocess_for_training(
         model_definition,
         training_set=df,
-        skip_save_processed_input=True,
-        random_seed=RANDOM_SEED
+        skip_save_processed_input=True#,
+        #random_seed=RANDOM_SEED
     )
 
     # run through each type of regularizer for the encoder
@@ -155,8 +155,8 @@ def test_encoder(test_case):
     for regularizer in [None, 'l1', 'l2', 'l1_l2']:
         # start with clean slate and make reproducible
         tf.keras.backend.clear_session()
-        np.random.seed(RANDOM_SEED)
-        tf.random.set_seed(RANDOM_SEED)
+        #np.random.seed(RANDOM_SEED)
+        #tf.random.set_seed(RANDOM_SEED)
 
         # setup kwarg for regularizer parms
         x_coder_kwargs = dict(
@@ -244,8 +244,8 @@ def test_encoder(test_case):
 )
 def test_decoder(test_case):
     # reproducible synthetic data set
-    np.random.seed(RANDOM_SEED)
-    tf.random.set_seed(RANDOM_SEED)
+    #np.random.seed(RANDOM_SEED)
+    #tf.random.set_seed(RANDOM_SEED)
 
     # create synthetic data for the test
     features = [
@@ -288,8 +288,8 @@ def test_decoder(test_case):
     training_set, _, _, training_set_metadata = preprocess_for_training(
         model_definition,
         training_set=df,
-        skip_save_processed_input=True,
-        random_seed=RANDOM_SEED
+        skip_save_processed_input=True#,
+        #random_seed=RANDOM_SEED
     )
 
     # run through each type of regularizer
@@ -297,8 +297,8 @@ def test_decoder(test_case):
     for regularizer in [None, 'l1', 'l2', 'l1_l2']:
         # start with clean slate and make reproducible
         tf.keras.backend.clear_session()
-        np.random.seed(RANDOM_SEED)
-        tf.random.set_seed(RANDOM_SEED)
+        #np.random.seed(RANDOM_SEED)
+        #tf.random.set_seed(RANDOM_SEED)
 
         # setup kwarg for regularizer parms
         x_coder_kwargs = dict(

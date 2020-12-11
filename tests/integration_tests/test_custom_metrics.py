@@ -15,7 +15,7 @@ GeneratedData = namedtuple('GeneratedData',
 
 @pytest.fixture()
 def generated_data():
-    np.random.seed(RANDOM_SEED)
+    #np.random.seed(RANDOM_SEED)
 
     # generate synthetic true values
     y_true = np.array(range(NUMBER_OBSERVATIONS)).astype(np.float32).reshape(
